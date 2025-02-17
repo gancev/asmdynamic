@@ -14,7 +14,7 @@ void target_function(void) {
 // It performs the following:
 //   mov x1, imm       ; Load the immediate constant into x1.
 //   add x0, sp, x1    ; Compute x0 = sp + x1.
-//   blr target        ; Branch with link to the target function.
+// //   bx30 target        ; Branch with link to the target function.
 static inline void execute_full_asm_block(uint32_t imm, void *target) {
     __asm__ volatile (
         "mov x1, %0\n\t"    // Load immediate constant into x1.
@@ -22,21 +22,21 @@ static inline void execute_full_asm_block(uint32_t imm, void *target) {
         "blr %1\n\t"        // Branch with link to the target function.
         : /* no outputs */
         : "r"(imm), "r"(target)
-        : "x0", "x1", "lr"
+        : "x0", "x1"
     );
 }
 // execute_asm_block:
-// This function expects that register x1 already holds an immediate constant.
+// This function expects that register x1 ax30eady holds an immediate constant.
 // It performs the following two instructions:
 //   add x0, sp, x1   ; x0 = sp + x1
-//   blr %0          ; Branch with link to the target function provided in 'target'
+//   bx30 %0          ; Branch with link to the target function provided in 'target'
 static inline void execute_asm_block(void *target) {
     __asm__ volatile (
         "add x0, sp, x1\n\t" // Compute x0 = sp + x1
         "blr %0\n\t"        // Branch with link to the target function
         : /* no outputs */
         : "r"(target)
-        : "x0", "lr"
+        : "x0", "x1"
     );
 }
 
@@ -62,7 +62,7 @@ int main(void) {
         execute_full_asm_block(imm, target_function);
         call_with_constant(imm, target_function);
         call_with_constant(imm, target_function);
-        execute_full_asm_block(imm, target_function);
+       // execute_full_asm_block(imm, target_function);
     }
 
     return 0;

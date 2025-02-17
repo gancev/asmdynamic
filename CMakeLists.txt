@@ -12,4 +12,4 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_OSX_ARCHITECTURES "arm64")
 
 # Add an executable target with the source file(s)
-add_executable(asm_chain main.c)
+add_executable(asm_chain main_.c)

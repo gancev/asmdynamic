@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <time.h>
+#include <unistd.h>
 
 //--------------------------------------------------------------
 // Common AArch64 Inline Assembly Functions
@@ -142,6 +143,9 @@ static inline void asm_str(uint64_t value, uint64_t *ptr) {
 //--------------------------------------------------------------
 
 int main(void) {
+         printf("wait:\n");
+    sleep(10);
+            printf("done:\n");
     // Seed the random number generator.
     srand((unsigned)time(NULL));
 
