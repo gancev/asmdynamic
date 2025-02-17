@@ -58,7 +58,7 @@ int main(void) {
     sleep(10);
     printf("done:\n");
     srand((unsigned)time(NULL));
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 1000000; i++) {
         uint32_t imm = rand() % 0x10000; // Generate a random immediate constant in [0, 0xFFFF]
         printf("Using immediate constant: 0x%X\n", imm);
         call_with_constant(imm, target_function);
