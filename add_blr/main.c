@@ -54,6 +54,9 @@ static inline void call_with_constant(uint32_t imm, void *target) {
 }
 
 int main(void) {
+    printf("wait:\n");
+    sleep(10);
+    printf("done:\n");
     srand((unsigned)time(NULL));
     for (int i = 0; i < 100000; i++) {
         uint32_t imm = rand() % 0x10000; // Generate a random immediate constant in [0, 0xFFFF]
