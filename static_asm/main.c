@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-
+#include <unistd.h>
 void target_func1(void *param) { printf("Target Function 1: param = %p\n", param); }
 void target_func2(void *param) { printf("Target Function 2: param = %p\n", param); }
 void target_func3(void *param) { printf("Target Function 3: param = %p\n", param); }
@@ -120003,6 +120003,7 @@ static inline void execute_full_asm_block_var10000(void *target) {
 }
 
 int main(void) {
+    sleep(10);
     execute_full_asm_block_var1(target_func1);
     execute_full_asm_block_var2(target_func2);
     execute_full_asm_block_var3(target_func3);

@@ -1,8 +1,7 @@
 def generate_asm_code_with_store(filename="main.c", num_functions=1000):
     with open(filename, "w") as f:
         # Write headers
-        f.write("#include <stdio.h>\n#include <stdint.h>\n#include <stdlib.h>\n\n")
-
+        f.write("#include <stdio.h>\n#include <stdint.h>\n#include <stdlib.h>\n\n#include <unistd.h>\n\n")
         # Define global memory arrays
         f.write(f"uint64_t global_memory_values[{num_functions}] = {{\n")
         f.write(", ".join(f"0x{hex(i)[2:].upper()}" for i in range(1, num_functions + 1)))
