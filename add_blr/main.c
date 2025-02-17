@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <time.h>
-
+#include <unistd.h>
 // A simple target function for demonstration.
 // It must return so that control goes back to the caller.
 void target_function(void) {
