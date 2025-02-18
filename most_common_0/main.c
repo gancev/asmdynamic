@@ -144,7 +144,7 @@ static inline void asm_str(uint64_t value, uint64_t *ptr) {
 
 int main(void) {
          printf("wait:\n");
-    sleep(10);
+    sleep(5);
             printf("done:\n");
     // Seed the random number generator.
     srand((unsigned)time(NULL));
@@ -179,6 +179,7 @@ int main(void) {
         printf("  asm_ldr(&mem)      = %lu\n", loaded);
         printf("\n");
     }
+    sleep(15);
 
     return 0;
 }

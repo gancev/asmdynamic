@@ -55,7 +55,7 @@ static inline void call_with_constant(uint32_t imm, void *target) {
 
 int main(void) {
     printf("wait:\n");
-    sleep(10);
+    sleep(5);
     printf("done:\n");
     srand((unsigned)time(NULL));
     for (int i = 0; i < 1000000; i++) {
@@ -67,6 +67,7 @@ int main(void) {
         call_with_constant(imm, target_function);
        // execute_full_asm_block(imm, target_function);
     }
+    sleep(15);
 
     return 0;
 }
