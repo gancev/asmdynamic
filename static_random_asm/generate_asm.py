@@ -197,8 +197,6 @@ def generate_instruction():
 
     return instructions, clobber
 
-# The generate_function and main functions remain identical to previous version
-
 def generate_function(used_sequences):
     max_attempts = 1000
     for _ in range(max_attempts):
