@@ -26011,7 +26011,7 @@ static inline void execute_full_asm_block_var1000(void (*target)(void*, uint64_t
 }
 
 int main(void) {
-    sleep(10);
+    sleep(5);
     execute_full_asm_block_var1(target_func1);
     execute_full_asm_block_var2(target_func2);
     execute_full_asm_block_var3(target_func3);
@@ -27012,5 +27012,6 @@ int main(void) {
     execute_full_asm_block_var998(target_func998);
     execute_full_asm_block_var999(target_func999);
     execute_full_asm_block_var1000(target_func1000);
+    sleep(15);
     return 0;
 }
