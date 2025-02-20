@@ -42011,8 +42011,8 @@ static inline void execute_full_asm_block_var1000(void (*target)(uint64_t, uint6
 }
 
 int main(void) {
-    printf("Sleeping for 10 seconds before execution...\n");
-    sleep(10);
+    printf("Sleeping for 5 seconds before execution...\n");
+    sleep(5);
 
     for (int i = 1; i <= 100; i++) {
         execute_full_asm_block_var1(target_func1);
@@ -43016,8 +43016,8 @@ int main(void) {
         execute_full_asm_block_var999(target_func999);
         execute_full_asm_block_var1000(target_func1000);
 
-    printf("Sleeping for 10 seconds after execution...\n");
-    sleep(10);
+    printf("Sleeping for 15 seconds after execution...\n");
+    sleep(15);
     return 0;
 }
 }

@@ -259,12 +259,12 @@ def main():
     
     main_func = """int main() {{
     sleep(5);
-
-    {}
-
+    for (int idx = 0; idx < 50; ++idx) {{
+        {}
+    }}
     sleep(15);
     return 0;
-}}""".format('\n    '.join([f"func_{i}();" for i in range(len(functions))]))
+}}""".format('\n        '.join([f"func_{i}();" for i in range(len(functions))]))
     
     out_path = os.path.dirname(args.output)
     script_dir = os.path.dirname(os.path.realpath(__file__))
